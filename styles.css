@@ -21,7 +21,6 @@ body {
   color: var(--netflix-white);
   line-height: 1.6;
 }
-
 /* Navigation */
 
 nav {
@@ -37,6 +36,10 @@ nav {
   transition: background-color 0.3s ease;
 }
 
+.navbar {
+  border-bottom: black solid 2px;
+}
+
 .nav-brand {
   color: var(--netflix-red);
   font-size: 1.8rem;
@@ -49,12 +52,13 @@ nav {
   text-decoration: none;
   margin-left: 2rem;
   transition: color 0.3s ease;
+  font-size: 20px;
+  font-weight: 500;
 }
 
 .nav-links a:hover {
   color: var(--netflix-red);
 }
-
 /* Hero Section */
 
 .hero {
@@ -156,7 +160,6 @@ nav {
 .cta-secondary:hover {
   transform: scale(1.05);
 }
-
 /* Skills Section */
 
 .skills {
@@ -211,7 +214,6 @@ nav {
   margin: 0.5rem 0;
   color: var(--netflix-light-gray);
 }
-
 /* Projects Section */
 
 .projects {
@@ -269,7 +271,6 @@ nav {
 .project-link:hover {
   transform: scale(1.05);
 }
-
 /* Education Section */
 
 .education {
@@ -330,7 +331,6 @@ nav {
   margin-top: 0.5rem;
   display: inline-block;
 }
-
 /* Contact Section */
 
 .contact {
@@ -376,7 +376,6 @@ nav {
   font-size: 1.5rem;
   color: var(--netflix-red);
 }
-
 /* Footer */
 
 footer {
@@ -389,7 +388,6 @@ footer {
   justify-content: center;
   align-items: center;
 }
-
 /* Modal Styles */
 
 .project-modal {
@@ -429,7 +427,6 @@ footer {
 .close-modal:hover {
   color: var(--netflix-red);
 }
-
 /* Typing effect styles */
 
 .txt {
@@ -448,7 +445,6 @@ footer {
     border-color: transparent;
   }
 }
-
 /* Scroll to Top Button */
 
 .scroll-top-btn {
@@ -480,7 +476,6 @@ footer {
   background-color: #ff0a16;
   transform: translateY(-5px);
 }
-
 /* Responsive Design */
 
 @media (max-width: 768px) {
