@@ -113,13 +113,53 @@ projectCards.forEach((card) => {
   });
 });
 
+// Theme toggle functionality
+const themeToggle = document.getElementById("theme-toggle");
+const htmlElement = document.documentElement;
+
+// Check for saved theme preference or use default dark theme
+function getThemePreference() {
+  return localStorage.getItem("theme") || "dark";
+}
+
+// Apply the current theme
+function applyTheme(theme) {
+  if (theme === "light") {
+    htmlElement.setAttribute("data-theme", "light");
+    themeToggle.querySelector(".fa-sun").style.display = "inline-block";
+    themeToggle.querySelector(".fa-moon").style.display = "none";
+  } else {
+    htmlElement.removeAttribute("data-theme");
+    themeToggle.querySelector(".fa-sun").style.display = "none";
+    themeToggle.querySelector(".fa-moon").style.display = "inline-block";
+  }
+}
+
+// Initialize theme
+const currentTheme = getThemePreference();
+applyTheme(currentTheme);
+
+// Toggle theme when button is clicked
+themeToggle.addEventListener("click", () => {
+  const newTheme =
+    htmlElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+  localStorage.setItem("theme", newTheme);
+  applyTheme(newTheme);
+});
+
 // Navbar background change on scroll
 window.addEventListener("scroll", function () {
   const nav = document.querySelector("nav");
   if (window.scrollY > 50) {
-    nav.style.backgroundColor = "var(--netflix-black)";
+    nav.style.backgroundColor =
+      htmlElement.getAttribute("data-theme") === "light"
+        ? "var(--background-secondary)"
+        : "var(--netflix-black)";
   } else {
-    nav.style.backgroundColor = "rgba(20, 20, 20, 0.95)";
+    nav.style.backgroundColor =
+      htmlElement.getAttribute("data-theme") === "light"
+        ? "rgba(245, 245, 245, 0.95)"
+        : "rgba(20, 20, 20, 0.95)";
   }
 });
 
